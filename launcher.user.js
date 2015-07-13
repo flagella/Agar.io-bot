@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        AposLauncher
 // @namespace   AposLauncher
-// @include     http://agar.io/*
+// @include     http://satilikhesaplar.com/agar*
 // @version     2.96
 // @grant       none
 // @author      http://www.twitch.tv/apostolique
@@ -29,7 +29,7 @@ function update(prefix, name, url) {
     window.jQuery("#" + prefix + "Dialog").show();
 }
 
-window.jQuery.get('https://raw.githubusercontent.com/Apostolique/Agar.io-bot/master/launcher.user.js?' + Math.floor((Math.random() * 1000000) + 1), function(data) {
+window.jQuery.get('https://raw.githubusercontent.com/Apostolique/satilikhesaplar.com/agar-bot/master/launcher.user.js?' + Math.floor((Math.random() * 1000000) + 1), function(data) {
     var latestVersion = data.replace(/(\r\n|\n|\r)/gm, "");
     latestVersion = latestVersion.substring(latestVersion.indexOf("// @version") + 11, latestVersion.indexOf("// @grant"));
 
@@ -37,7 +37,7 @@ window.jQuery.get('https://raw.githubusercontent.com/Apostolique/Agar.io-bot/mas
     var myVersion = parseFloat(aposLauncherVersion + 0.0000);
 
     if (latestVersion > myVersion) {
-        update("aposLauncher", "launcher.user.js", "https://github.com/Apostolique/Agar.io-bot/blob/master/launcher.user.js/");
+        update("aposLauncher", "launcher.user.js", "https://github.com/Apostolique/satilikhesaplar.com/agar-bot/blob/master/launcher.user.js/");
     }
     console.log('Current launcher.user.js Version: ' + myVersion + " on Github: " + latestVersion);
 });
@@ -212,7 +212,7 @@ console.log("Running Bot Launcher!");
                 b = a.val();
             b && (ka[b] = a.text())
         }));
-        e.get("https://m.agar.io/info", function(a) {
+        e.get("https://m.satilikhesaplar.com/agarinfo", function(a) {
                 var b = {},
                     c;
                 for (c in a.regions) {
@@ -266,7 +266,7 @@ console.log("Running Bot Launcher!");
     function Za() {
         var a = ++Ba;
         console.log("Find " + y + P);
-        e.ajax("https://m.agar.io/", {
+        e.ajax("https://m.satilikhesaplar.com/agar", {
             error: function() {
                 setTimeout(Za, 1E3)
             },
@@ -305,7 +305,7 @@ console.log("Running Bot Launcher!");
         if (tb) {
             var d = a.split(":");
             a = d[0] + "s://ip-" + d[1].replace(/\./g, "-").replace(/\//g,
-                "") + ".tech.agar.io:" + (+d[2] + 2E3)
+                "") + ".tech.satilikhesaplar.com/agar:" + (+d[2] + 2E3)
         }
         M = [];
         k = [];
@@ -1136,7 +1136,7 @@ console.log("Running Bot Launcher!");
                 e(".agario-profile-picture").attr("src", a.data.url)
             });
             e("#helloContainer").attr("data-logged-in", "1");
-            null != B ? e.ajax("https://m.agar.io/checkToken", {
+            null != B ? e.ajax("https://m.satilikhesaplar.com/agarcheckToken", {
                 error: function() {
                     B = null;
                     La(a)
@@ -1154,7 +1154,7 @@ console.log("Running Bot Launcher!");
                 cache: !1,
                 crossDomain: !0,
                 data: B
-            }) : e.ajax("https://m.agar.io/facebookLogin", {
+            }) : e.ajax("https://m.satilikhesaplar.com/agarfacebookLogin", {
                 error: function() {
                     B = null;
                     e("#helloContainer").attr("data-logged-in", "0")
@@ -1174,13 +1174,13 @@ console.log("Running Bot Launcher!");
         e("#helloContainer").attr("data-party-state", "4");
         a = decodeURIComponent(a).replace(/.*#/gim, "");
         Ma("#" + d.encodeURIComponent(a));
-        e.ajax(Na + "//m.agar.io/getToken", {
+        e.ajax(Na + "//m.satilikhesaplar.com/agargetToken", {
             error: function() {
                 e("#helloContainer").attr("data-party-state", "6")
             },
             success: function(b) {
                 b = b.split("\n");
-                e(".partyToken").val("agar.io/#" +
+                e(".partyToken").val("satilikhesaplar.com/agar#" +
                     d.encodeURIComponent(a));
                 e("#helloContainer").attr("data-party-state", "5");
                 Y(":party");
@@ -1202,11 +1202,11 @@ console.log("Running Bot Launcher!");
             tb = "https:" == Na,
             xa = d.navigator.userAgent;
         if (-1 != xa.indexOf("Android")) d.ga && d.ga("send", "event", "MobileRedirect", "PlayStore"), setTimeout(function() {
-                d.location.href = "market://details?id=com.miniclip.agar.io"
+                d.location.href = "market://details?id=com.miniclip.satilikhesaplar.com/agar"
             },
             1E3);
         else if (-1 != xa.indexOf("iPhone") || -1 != xa.indexOf("iPad") || -1 != xa.indexOf("iPod")) d.ga && d.ga("send", "event", "MobileRedirect", "AppStore"), setTimeout(function() {
-            d.location.href = "https://itunes.apple.com/app/agar.io/id995999703"
+            d.location.href = "https://itunes.apple.com/app/satilikhesaplar.com/agarid995999703"
         }, 1E3);
         else {
             var za, f, G, m, r, X = null,
@@ -1342,7 +1342,7 @@ console.log("Running Bot Launcher!");
                     Ia = a
                 };
                 null != d.localStorage && (null == d.localStorage.AB9 && (d.localStorage.AB9 = 0 + ~~(100 * Math.random())), mb = +d.localStorage.AB9, d.ABGroup = mb);
-                e.get(Na + "//gc.agar.io", function(a) {
+                e.get(Na + "//gc.satilikhesaplar.com/agar", function(a) {
                     var b = a.split(" ");
                     a = b[0];
                     b = b[1] || ""; - 1 == ["UA"].indexOf(a) && ob.push("ussr");
@@ -2215,7 +2215,7 @@ console.log("Running Bot Launcher!");
                     Y(":party");
                     L = function(a) {
                         Ma("/#" + d.encodeURIComponent(a));
-                        e(".partyToken").val("agar.io/#" + d.encodeURIComponent(a));
+                        e(".partyToken").val("satilikhesaplar.com/agar#" + d.encodeURIComponent(a));
                         e("#helloContainer").attr("data-party-state", "1")
                     };
                     I()
